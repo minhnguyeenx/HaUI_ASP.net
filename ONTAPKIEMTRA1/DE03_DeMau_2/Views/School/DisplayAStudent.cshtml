@@ -1,0 +1,36 @@
+﻿@model DE03_DeMau_2.Models.Student
+@{
+    ViewBag.Title = "DisplayAStudent";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<style>
+    table{
+        border-collapse:collapse;
+        width:300px;
+    }
+    td{
+        padding: 4px 4px;
+    }
+</style>
+
+<h2>DisplayAStudent</h2>
+<table border="1">
+    <tr>
+        <td width="40%">Student ID</td>
+        <td width="60%">@Model.SID</td>
+    </tr>
+    <tr>
+        <td>Student Name</td>
+        <td>@Model.SName</td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td>@Model.Age</td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td>@Model.Address</td>
+    </tr>
+</table>
+

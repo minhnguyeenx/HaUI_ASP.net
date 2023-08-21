@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "TinhToan";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Tính Toán</h2>
+
+<form>
+    <table>
+        <tr>
+            <th>Number 1</th>  &nbsp;
+            <td><input type="text" name="num1" /></td>
+        </tr>
+        <tr>
+            <th>Number 2</th>  &nbsp;
+            <td><input type="text" name="num2" /></td>
+        </tr>
+        <tr>
+            <th>Phép tính</th>  &nbsp;
+            <td>
+                <input type="radio" name="pheptinh" value="+" /> Cong &nbsp;
+                <input type="radio" name="pheptinh" value="-" /> Tru &nbsp;
+                <input type="radio" name="pheptinh" value="*" /> Nhan &nbsp;
+                <input type="radio" name="pheptinh" value="/" /> Chia &nbsp;
+            </td>
+        </tr>
+    </table>
+    <br />
+    <input type="submit" value="Tinh"/>
+</form>

@@ -1,0 +1,35 @@
+﻿
+@*//KHÔNG CẦN DẤU ;
+//PHẢI CÓ*@
+@*@model DE02.Models.SanPham*@
+
+@*Lấy trong vòng foreach*@
+@model IEnumerable<DE02.Models.SanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hiển thị dánh sách</h2>
+<table border="1" >
+    <thead>
+        <tr>
+            <th>Mã sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Giá tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.MaSP</td>
+                    <td>@item.TenSP</td>
+                    <td>@item.SoLuong</td>
+                    <td>@item.GiaTien</td>
+                </tr>
+            }
+    </tbody>
+</table>
+

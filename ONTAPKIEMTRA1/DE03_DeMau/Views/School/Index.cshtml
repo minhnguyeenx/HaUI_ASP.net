@@ -1,0 +1,33 @@
+﻿@model DE03_DeMau.Models.Student
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Add new student</h2>
+
+<form method="post" action="~/School/DisplayAStudent">
+    <table>
+        <tr>
+            <th>Student ID</th>
+            <td><input type="text" name="maSV" /></td>
+        </tr>
+        <tr>
+            <th>Student Name</th>
+            <td><input type="text" name="tenSV" /></td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td><input type="text" name="tuoi" /></td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td><input type="text" name="diaChi" /></td>
+        </tr>
+        <tr>
+            <td align="right"><input type="submit" value="Regis" /></td>
+            <td><input type="reset" value="Cancel" /></td>
+        </tr>
+    </table>
+</form>
+

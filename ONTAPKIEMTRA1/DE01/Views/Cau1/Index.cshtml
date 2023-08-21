@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    //LAYOUT HIEN THI BAN DAU
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 >Nhập thông tin hàng</h2>
+<style>
+    table{
+        width: 50%;
+        margin: auto;
+    }
+    h2{
+        text-align:center;
+    }
+</style>
+@*Cau1 là một packet view
+Output là tên view*@
+<form method="post" action="~/Cau1/Output">
+    @*Nhớ để name*@
+    <table border="1" cellpadding="10" cellspacing="10">
+        <tr>
+            <th>Mã hàng: </th>
+            <td> <input type="text" name="maHang" /></td>
+        </tr>
+        <tr>
+            <th>Tên hàng: </th>
+            <td> <input type="text" name="tenHang" /></td>
+        </tr>
+        <tr>
+            <th>Loại hàng</th>
+            <td>
+                <select name="loaiHang">
+                    <option value="Quần áo">Quần áo</option>
+                    <option value="Điện tử">Điện tử</option>
+                    <option value="Đồ gia dụng">Đồ gia dụng</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Đơn giá: </th>
+            <td> <input type="text" name="donGia" /></td>
+        </tr>
+        <tr>
+            <th>Số lượng: </th>
+            <td> <input type="text" name="soLuong" /></td>
+        </tr>
+        <tr>
+            <th>Trạng thái: </th>
+            <td>
+                Còn<input type="radio" name="trangThai" value="Còn"/>
+                Hết<input type="radio" name="trangThai" value="Hết"/>
+            </td>
+        </tr>
+        @*<tr>
+            <th>Thành tiền: </th>
+            <td> <input type="text" name="thanhtien" /></td>
+        </tr>*@
+        <tr>
+            <th colspan="2" align="center">
+                <input type="submit" value="Tính" />
+            </th>
+        </tr>
+    </table>
+</form>
+

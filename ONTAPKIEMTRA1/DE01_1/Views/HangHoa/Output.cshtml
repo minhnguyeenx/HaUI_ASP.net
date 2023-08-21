@@ -1,0 +1,37 @@
+﻿@model DE01_1.Models.HangHoa
+@{
+    ViewBag.Title = "Output";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thông tin mặt hàng</h2>
+
+<table border="1" cellpadding="10" cellspacing="10">
+    <tr>
+        <th>Mã hàng: </th>
+        <td>@Model.MaHang</td>
+    </tr>
+    <tr>
+        <th>Tên hàng: </th>
+        <td>@Model.TenHang</td>
+    </tr>
+    <tr>
+        <th>Loại hàng: </th>
+        <td>
+            @Model.LoaiHang
+        </td>
+    </tr>
+    <tr>
+        <th>Đơn giá: </th>
+        <td>@Model.DonGia</td>
+    </tr>
+    <tr>
+        <th>Số lượng: </th>
+        <td>@Model.SoLuong</td>
+    </tr>
+    <tr>
+        <th>Thành tiền: </th>
+        <td>@Model.ThanhTien</td>
+    </tr>
+</table>
+

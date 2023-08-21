@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<style>
+    td{
+        padding: 4px 0px;
+    }
+</style>
+
+<h2>Add new student</h2> <br />
+
+<form method="post" action="/School/DisplayAStudent">
+    <table>
+        <tr>
+            <td>Student ID</td>
+            <td><input type="text" name="sID" /></td>
+        </tr>
+        <tr>
+            <td>Student Name</td>
+            <td><input type="text" name="sName" /></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input type="text" name="age" /></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" name="address" /></td>
+        </tr>
+        <tr>
+            <td align="right" width="50%"><input type="submit" value="Regis" /></td>
+            <td width="50%"><input type="reset" value="Reset"/></td>
+        </tr>
+    </table>
+</form>
+

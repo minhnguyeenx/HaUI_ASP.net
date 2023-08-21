@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Display2ListStudent";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    List<DE03_DeMau_2.Models.Student> li1 = ViewBag.li1;
+    List<DE03_DeMau_2.Models.Student> li2 = ViewBag.li2;
+}
+
+@*<h2>Display2ListStudent</h2>*@
+
+<style>
+    td {
+        width: 150px;
+    }
+    table{
+        /*border: 1px solid black;*/
+        border-collapse: collapse;
+    }
+</style>
+
+<h3>Danh sach 1</h3>
+
+<table border="1">
+    <thead>
+        <tr>
+            <td>Mã SV</td>
+            <td>Tên SV</td>
+            <td>Tuổi</td>
+            <td>Địa chỉ</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in li1)
+        {
+            <tr>
+                <td>@item.SID</td>
+                <td>@item.SName</td>
+                <td>@item.Age</td>
+                <td>@item.Address</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Danh sach 2</h3>
+
+<table border="1">
+    <thead>
+        <tr>
+            <td>Mã SV</td>
+            <td>Tên SV</td>
+            <td>Tuổi</td>
+            <td>Địa chỉ</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in li2)
+        {
+            <tr>
+                <td>@item.SID</td>
+                <td>@item.SName</td>
+                <td>@item.Age</td>
+                <td>@item.Address</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

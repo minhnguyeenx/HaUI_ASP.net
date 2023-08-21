@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DE02.Models.SanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align: center">QUẢN LÝ SẢN PHẨM</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Masp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tensp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soluong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Masp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tensp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soluong)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.Masp }) |
+            @Html.ActionLink("Xem", "Details", new { id=item.Masp }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.Masp })
+        </td>
+    </tr>
+}
+
+</table>

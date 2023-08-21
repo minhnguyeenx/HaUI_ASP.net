@@ -1,0 +1,71 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .container{
+            display:flex;
+        }
+        .container1, .container2{
+            display:block;
+            width:50%;
+        }
+        ul,li{
+            list-style-type: none;
+        }
+        footer p{
+            align-items:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="container1">
+            @RenderBody()
+        </div>
+        <div class="container2">
+            <h3>DANH SÁCH</h3>
+            <ul>
+                <li><a href="/School/Index">Thêm 1 sinh viên</a></li>
+                <li><a href="/School/TinhToan">Tính toán</a></li>
+                <li><a href="/School/DisplayListStudent">Xem danh sách</a></li>
+                <li><a href="/School/DisplayCourseStudent">Xem khoá học</a></li>
+                <li><a href="/School/Display2ListStudent">Xem 2 danh sách</a></li>
+            </ul>
+        </div>
+        <hr />
+    </div>
+
+    <footer >
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿@model DE03_DeMau_2.Models.CourseStudent
+@{
+    ViewBag.Title = "DisplayCourseStudent";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<style>
+    td {
+        width: 150px;
+    }
+    table{
+        border-collapse: collapse;
+    }
+</style>
+
+<h2>DisplayCourseStudent</h2>
+<hr />
+<h3>Course Information</h3>
+<p>Course ID: <span>@Model.course.CID</span> </p>
+<p>Course Name  <span>@Model.course.CName</span></p>
+<h3>List of student</h3>
+<table border="1">
+    <thead>
+        <tr>
+            <td>Mã SV</td>
+            <td>Tên SV</td>
+            <td>Tuổi</td>
+            <td>Địa chỉ</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.students)
+        {
+            <tr>
+                <td>@item.SID</td>
+                <td>@item.SName</td>
+                <td>@item.Age</td>
+                <td>@item.Address</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

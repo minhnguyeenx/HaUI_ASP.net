@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DE01_CoNga.Models.tblEmployee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tblDept.deptname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblDept.deptname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.addr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salary)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.image)*@
+                @{
+                    var path = "~/Images/" + item.image;
+                    <img src="@Url.Content(path)" width="100px" />
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.eid }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.eid }) |
+                @Html.ActionLink("Xóa", "XoaDulieu", new { id = item.eid })
+            </td>
+        </tr>
+    }
+
+</table>

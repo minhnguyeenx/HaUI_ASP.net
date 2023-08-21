@@ -1,0 +1,36 @@
+﻿@*@model IEnumerable<DE03_DeMau_2.Models.Student>*@
+@{
+    ViewBag.Title = "DisplayListStudent";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    List<DE03_DeMau_2.Models.Student> st = ViewBag.st;
+}
+<style>
+    td{
+        width: 150px;
+    }
+</style>
+
+<h2>DisplayListStudent</h2>
+
+<table>
+    <thead>
+        <tr>
+            <td>Mã SV</td>
+            <td>Tên SV</td>
+            <td>Tuổi</td>
+            <td>Địa chỉ</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in st)
+            {
+                <tr>
+                    <td>@item.SID</td>
+                    <td>@item.SName</td>
+                    <td>@item.Age</td>
+                    <td>@item.Address</td>
+                </tr>
+            }
+    </tbody>
+</table>
+

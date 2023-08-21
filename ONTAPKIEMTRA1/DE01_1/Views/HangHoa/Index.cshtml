@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nhập thông tin hàng</h2>
+
+<form method="post" action="~/HangHoa/Output">
+    <table border="1" cellpadding="10" cellspacing="10">
+        <tr>
+            <th>Mã hàng: </th>
+            <td><input type="text" name="maHang" /></td>
+        </tr>
+        <tr>
+            <th>Tên hàng: </th>
+            <td><input type="text" name="tenHang" /></td>
+        </tr>
+        <tr>
+            <th>Loại hàng: </th>
+            <td>
+                <select name="loaiHang">
+                    <option value="Quần áo">Quần áo</option>
+                    <option value="Quần áo 2">Quần áo 2</option>
+                    <option value="Quần áo 3">Quần áo 3</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Đơn giá: </th>
+            <td><input type="text" name="donGia" /></td>
+        </tr>
+        <tr>
+            <th>Số lượng: </th>
+            <td><input type="text" name="soLuong" /></td>
+        </tr>
+        <tr colspan="2" align ="center">
+            <td><input type="submit" value="Tính"/></td>
+        </tr>
+    </table>
+</form>
+

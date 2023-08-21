@@ -1,0 +1,26 @@
+﻿@model DE03_DeMau.Models.Student
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Display a student</h2>
+<table border="1">
+    <tr>
+        <td>Mã sinh viên</td>
+        <td>@Model.MaSV</td>
+    </tr>
+    <tr>
+        <td>Họ tên</td>
+        <td>@Model.TenSV</td>
+    </tr>
+    <tr>
+        <td>Tuoi</td>
+        <td>@Model.Tuoi</td>
+    </tr>
+    <tr>
+        <td>Địa chỉ</td>
+        <td>@Model.DiaChi</td>
+    </tr>
+</table>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DE02.Models.SanPham>
+@{
+    ViewBag.Title = "HaiDanhSach";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hai Danh Sách</h2>
+
+<h3>Danh sach 1</h3>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Mã sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Giá tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.SoLuong > 60)
+            {
+                <tr>
+                    <td>@item.MaSP</td>
+                    <td>@item.TenSP</td>
+                    <td>@item.SoLuong</td>
+                    <td>@item.GiaTien</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<h3>Danh sach 2</h3>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Mã sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Giá tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.SoLuong < 200)
+            {
+                <tr>
+                    <td>@item.MaSP</td>
+                    <td>@item.TenSP</td>
+                    <td>@item.SoLuong</td>
+                    <td>@item.GiaTien</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

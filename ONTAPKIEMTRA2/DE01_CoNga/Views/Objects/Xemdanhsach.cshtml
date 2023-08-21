@@ -1,0 +1,87 @@
+﻿@model IEnumerable<DE01_CoNga.Models.tblEmployee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Xemdanhsach", "Objects", FormMethod.Get))
+            {
+                <div>
+                    <p><label>Tìm kiếm theo tên</label></p>
+                    <input type="text" name="searchName" value=""/>
+                </div>
+                <button type="submit">Tìm kiếm</button>
+            }
+
+@using (Html.BeginForm("Xemdanhsach", "Objects", FormMethod.Get))
+            {
+                <div>
+                    <p><label>Nhập giá trị lương: </label></p>
+                    <input type="number" name="minSalary" /> 
+                </div>
+                <button type="submit" > Tìm kiếm</button>
+            }
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "ThemDulieu")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tblDept.deptname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblDept.deptname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.addr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salary)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.image)*@
+                @{
+                    var path = "~/Images/" + item.image;
+                    <img src="@Url.Content(path)" width="100px" />
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.eid }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.eid }) |
+                @Html.ActionLink("Xóa", "XoaDulieu", new { id = item.eid })
+            </td>
+        </tr>
+    }
+
+</table>

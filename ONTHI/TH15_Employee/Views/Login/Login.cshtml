@@ -1,0 +1,15 @@
+﻿<h2>Login</h2>
+@using (Html.BeginForm()) {
+    <p>
+        <label>Username</label>
+        <input name="username" type="text" />
+    </p>
+    <p>
+        <label>Password</label>
+        <input name="password" type="text" />
+    </p>
+    <p>
+        <input type="submit" value="Login"/>
+    </p>
+    @ViewBag.errMsg
+}
